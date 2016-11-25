@@ -20,7 +20,7 @@ $(document).ready(function () {
             //Login OK!
             $("#loginForm").find(".form-group").addClass("has-success");
 
-            //if else statement for å skille brukertyper
+            //if else statement for å skille mellom brukertyper
             if (data.type === "admin")
                 window.location.href = "hjemAdmin.html";
 
@@ -28,7 +28,7 @@ $(document).ready(function () {
                 window.location.href = "hjemStudent.html";
             }
             else {
-                window.location.href = "hjemAdmin.html";
+                window.location.href = "hjemStudent.html";
             }
 
 

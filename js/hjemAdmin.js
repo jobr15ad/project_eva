@@ -4,8 +4,7 @@
 //Logg ut funksjon
 $(document).ready(function () {
 
-    $("studentLogOut").on("click", function () {
-        SDK.logOut();
+    $("#LogOut").click(function () {
         window.location.href = "login.html";
     });
 });

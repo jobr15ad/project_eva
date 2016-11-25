@@ -26,7 +26,10 @@ $(document).ready(function(){
                     "</tr>"
                 );
             });
-        }
+        },
+   //     error: function (xhr, status, error) {
+     //       console.log(xhr, status, error);
+       // }
     });
 });
 
@@ -76,8 +79,7 @@ $(function(){
 //Logg ut funksjon
 $(document).ready(function () {
 
-    $("studentLogOut").on("click", function () {
-        SDK.logOut();
+    $("#LogOut").click(function () {
         window.location.href = "login.html";
     });
 });

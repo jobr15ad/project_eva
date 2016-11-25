@@ -27,10 +27,10 @@ var SDK = {
 
 
     //funksjon for login
-    login: function (cbsMail, password, cb) {
+    login: function (username, password, cb) {
         this.request({
             data: {
-                cbsMail: cbsMail,
+                cbsMail: username,
                 password: password
 
             },
@@ -39,12 +39,14 @@ var SDK = {
         },  function (err, data) {
 
 
-            //Onår man få rlogg inn feil
+            //Når man får feil på logg inn
             if (err) return cb(err);
 
             //Tokens som brukes til å identifisere hvem som logger inn
-            SDK.Storage.persist("tokenId", data.id);
-            SDK.Storage.persist("tokenUserType", data.id);
+            SDK.Storage.persist("cbs_mail", data.id);
+           // SDK.Storage.persist("tokenUserType", data.id);
+            SDK.Storage.persist("type",data.type);
+
             cb(null, data);
 
         });
@@ -69,6 +71,8 @@ var SDK = {
         }
     },
 
+
+
     User: {
         getAll: function (cb) {
             SDK.request({method: "GET", url: "/login"}, cb);
@@ -78,10 +82,13 @@ var SDK = {
         }
     },
 
+
     logOut:function() {
-        SDK.Storage.remove("tokeID");
-        SDK.Storage.remove("tokenUserType");
+        SDK.Storage.remove("tokenId");
     },
+
+
+
 };
 function encryptDecrypt(input) {
     var key = ['A', 'B', 'C'];
