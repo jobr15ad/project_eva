@@ -85,6 +85,7 @@ var SDK = {
 
     logOut:function() {
         SDK.Storage.remove("tokenId");
+        SDK.Storage.remove("type",data.type);
     },
 
 

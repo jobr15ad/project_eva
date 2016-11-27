@@ -5,23 +5,21 @@
     <link rel="stylesheet" href="lib/css/bootstrap.css">
 
     <meta charset="UTF-8">
-    <title>Se og slett kommentarer</title>
+    <title>Evaluer en undervisning</title>
 </head>
 <body>
 
 <!-- Her er kode for selve navigasjonsbaren øverst på siden -->
 <div class="navbar navbar-default navbar-static-top" role="navigation">
             <ul class="nav navbar-nav">
-                <li><a href="http://localhost:63343/Klient/hjemAdmin.html?_ijt=m5igd6mu2ve8piqtanb19pkdhm"><i class="glyphicon glyphicon-home"></i></a></li>
-                <li><a href="http://localhost:63343/Klient/seOgSlettKommentarer.html?_ijt=m5igd6mu2ve8piqtanb19pkdhm"><button>Se og slett kommentarer</button></a></li>
+                <li><a href="http://localhost:63343/Klient/hjemStudent.html?_ijt=tq4m9g8n5o0vn8i6higqklj9j2"><i class="glyphicon glyphicon-home"></i></a></li>
+                <li><a href="http://localhost:63343/Klient/SeKurs.html?_ijt=ofu90o6tbi0frl1gbv00o1b6um"><button>Evaluer og se en undervisninger</button></a></li>
             </ul>
-
 
     <div class="navbar-form navbar-right">
 
         <button id="LogOut" class="btn btn-success" onclick="">Logg ut</button>
     </div>
-
         </div>
     </div>
     </li>
@@ -30,27 +28,24 @@
     </ul>
 </div><!--/.nav-collapse -->
 
-<!-- tabell for å se alle undervisninger i DIS -->
+
+
+<!-- liste av alle undervisningene -->
 <div class="page-header">
-    <h1>Se alle undervisninger og reviews</h1>
+    <h1>Se alle fagene til brukeren som er logget inn</h1>
 </div>
 
 <table class="table">
     <thead>
     <th>Navn på faget</th>
-    <th>Type</th>
-    <th>leksjonsdato start</th>
-    <th>Se reviews</th>
     </thead>
-
-    <tbody id="lectureTableBody">
+    <tbody id="courseTableBody">
     </tbody>
     <tr></tr>
     </tbody>
 </table>
 
 </div>
-
 
 
 
@@ -63,7 +58,8 @@
 
 <script type="text/javascript" src="lib/js/jquery-3.1.1.js"></script>
 <script type="text/javascript" src="lib/js/bootstrap.js"></script>
-<script type="text/javascript" src="js/seOgSlettKommentarer.js"></script>
+<script type="text/javascript" src="js/seKurs.js"></script>
+
 
 
 </body>

@@ -4,32 +4,29 @@
 
 $(document).ready(function(){
 
-    var $lectureTableBody = $("#lectureTableBody")
+    var $courseTableBody = $("#courseTableBody")
 //Her henter man og får kontakt med serveren. eksempelet fra chrashcourset til books
     $.ajax({
-        url:"http://localhost:5000/api/lecture/BINTO1067U_LA_E16",
+        url:"http://localhost:5000/api/course/8",
         method: "GET",
         dataTyper: "json",
         contetType:"application/json",
 
-        success: function(lectures){
+        success: function(courses){
 
+            var courses = JSON.parse(courses)
 
-            lectures.forEach(function(lecture){
+            courses.forEach(function(course){
 
-                $lectureTableBody.append(
+                $courseTableBody.append(
                     "<tr>" +
-                    "<td>" + lecture.description + "</td>" +
-                    "<td>" + lecture.type + "</td>" +
-                    "<td>" + lecture.startDate + "</td>" +
-                    "<td>" +  +  "</td>" +
+                    "<td>" + course.code + "</td>" +
+                    "<td><a role='button' href='lectures.html' class='btn btn-success btn-lg'> se lectures</a></td>" +
                     "</tr>"
                 );
             });
         },
-   //     error: function (xhr, status, error) {
-     //       console.log(xhr, status, error);
-       // }
+
     });
 });
 

@@ -28,8 +28,10 @@ $(document).ready(function () {
                 window.location.href = "hjemStudent.html";
             }
             else {
-                window.location.href = "hjemStudent.html";
+                window.alert("Feil verdier")
+                //window.location.href = "hjemStudent.html";
             }
+
 
 
         });
