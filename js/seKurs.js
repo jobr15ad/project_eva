@@ -7,7 +7,7 @@ $(document).ready(function(){
     var $courseTableBody = $("#courseTableBody")
 //Her henter man og får kontakt med serveren. eksempelet fra chrashcourset til books
     $.ajax({
-        url:"http://localhost:5000/api/course/8",
+        url:"http://localhost:5000/api/course/" + window.localStorage.getItem("storeSDKcbs_mail"),
         method: "GET",
         dataTyper: "json",
         contetType:"application/json",
@@ -15,6 +15,7 @@ $(document).ready(function(){
         success: function(courses){
 
             var courses = JSON.parse(courses)
+
 
             courses.forEach(function(course){
 
