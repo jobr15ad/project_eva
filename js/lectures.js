@@ -1,26 +1,33 @@
 /**
  * Created by johanneskrafftbruland on 25.11.2016.
  */
+
 $(document).ready(function(){
 
-    var $lectureTableBody = $("#lectureTableBody")
+    var course = location.hash;
+    var course = course.replace('#', '');
+
+    var $coursesTable = $("#coursesTable")
+    var code = JSON.parse(localStorage.getItem("lectureCode"));
+
 //Her henter man og får kontakt med serveren. eksempelet fra chrashcourset til books
+
     $.ajax({
-        url:"http://localhost:5000/api/lecture/BALJO1001U_LA_E16",
+        url:"http://localhost:5000/api/lecture/" + course,
         method: "GET",
-        dataTyper: "json",
-        contetType:"application/json",
+        dataType: "json",
+
 
         success: function(lectures){
 
 
-            lectures.forEach(function(lecture){
+            lectures.forEach(function(lectureId){
 
-                $lectureTableBody.append(
+                $coursesTable.append(
                     "<tr>" +
-                    "<td>" + lecture.description + "</td>" +
-                    "<td>" + lecture.type + "</td>" +
-                    "<td>" + lecture.startDate + "</td>" +
+                    "<td>" + lectureId.description + "</td>" +
+                    "<td>" + lectureId.type + "</td>" +
+                    "<td>" + lectureId.startDate + "</td>" +
                     "<td><a role='button' href='lagOgSeReview.html' class='btn btn-success btn-lg'> lag review</a></td>" +
                     "</tr>"
                 );

@@ -9,8 +9,8 @@ $(document).ready(function(){
     $.ajax({
         url:"http://localhost:5000/api/lecture/BALJO1001U_LA_E16",
         method: "GET",
-        dataTyper: "json",
-        contetType:"application/json",
+        dataType: "json",
+        contentType:"application/json",
 
         success: function(lectures){
 

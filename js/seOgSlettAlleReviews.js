@@ -3,7 +3,7 @@
  */
 
 
-//tabell for å se alle kommentarer og ratiner til den spesifikke lecturen
+
 
 
     $("#LogOut").click(function () {

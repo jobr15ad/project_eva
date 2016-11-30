@@ -43,7 +43,7 @@ var SDK = {
             if (err) return cb(err);
 
             //Tokens som brukes til å identifisere hvem som logger inn
-            SDK.Storage.persist("cbs_mail", data.id);
+            SDK.Storage.persist("userId", data.id);
            // SDK.Storage.persist("tokenUserType", data.id);
             SDK.Storage.persist("type",data.type);
 
@@ -85,6 +85,7 @@ var SDK = {
 
 
     logOut:function() {
+        SDK.Storage.remove("cbs_mail");
         SDK.Storage.remove("tokenId");
         SDK.Storage.remove("type",data.type);
     },

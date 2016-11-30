@@ -55,10 +55,14 @@ function review(comment, rating) {
     this.comment = comment;
     this.rating = rating;
 }
-
 var review = new review("comment", 'rating');
 
 console.table(review);
+
+
+
+
+
 
 
 
