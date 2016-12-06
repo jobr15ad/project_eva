@@ -2,7 +2,6 @@
  * Created by johanneskrafftbruland on 17.11.2016.
  */
 
-
 //Funksjon fra crash course i JavaScript
 var SDK = {
 
@@ -29,10 +28,18 @@ var SDK = {
 
     //funksjon for login
     login: function (username, password, cb) {
+
+        //Hashing av passordet(Fra MAthias Lund)
+        let SALT = "n0zaCTADRUuTb@JUp01n%5@(l@IAaLlZ";
+        let passWithSalt = password + SALT;
+        let hashedPassWithSalt = md5(passWithSalt);
+        let passWithSalt2 = hashedPassWithSalt + SALT;
+        let hashedPassWithSalt2 = md5(passWithSalt2);
+
         this.request({
             data: {
                 cbsMail: username,
-                password: password
+                password: hashedPassWithSalt2
 
             },
 
@@ -80,7 +87,8 @@ var SDK = {
     },
 
 
-    //dekrypteringskode fra Mathias Lund
+    //Kode for å kunne hashe passordet for å logge inn uten å måtte bruke det hashede passordet.
+    //Fra MAthias Lund
     Decrypt: function (string) {
         var Base64 = {
             _keyStr: "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=",
@@ -174,11 +182,8 @@ var SDK = {
         }
 
         return Base64.decode(string)
-
     }
 };
-
-
 
 
 /*
