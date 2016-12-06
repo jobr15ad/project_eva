@@ -2,6 +2,7 @@
  * Created by johanneskrafftbruland on 17.11.2016.
  */
 
+//funksjon for å validere brukernavnet og passordet (og om student eller admin) til den som prøver å logge inn
 $(document).ready(function () {
 
     $("#loginButton").on("click", function(e){
@@ -12,15 +13,15 @@ $(document).ready(function () {
 
         SDK.login(email, pw, function(err, data){
 
-            //On wrong credentials
+            //error hvis man skriver inn feil verdier.
             if(err) {
                 return $("#loginForm").find(".form-group").addClass("has-error");
             }
 
-            //Login OK!
+            //Login ok.
             $("#loginForm").find(".form-group").addClass("has-success");
 
-            //if else statement for å skille mellom brukertyper
+            //if else statement for å skille mellom admin eller student
             if (data.type === "admin")
                 window.location.href = "hjemAdmin.html";
 
@@ -29,14 +30,8 @@ $(document).ready(function () {
             }
             else {
                 window.alert("Feil verdier")
-                //window.location.href = "hjemStudent.html";
             }
 
-
-
         });
-
     });
-
-
 });

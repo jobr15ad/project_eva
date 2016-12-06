@@ -1,5 +1,5 @@
 /**
- * Created by johanneskrafftbruland on 12.11.2016.
+ * Created by johanneskrafftbruland on 30.11.2016.
  */
 
 $(document).ready(function(){
@@ -7,13 +7,13 @@ $(document).ready(function(){
     var $coursesTable = $("#coursesTable")
 
     $.ajax({
-        url:"http://localhost:5000/api/course/"+ window.localStorage.getItem("storeSDKcbs_mail"),
+        url:"http://localhost:5000/api/course/"+ window.localStorage.getItem("storeSDKuserId"),
         method: "GET",
         dataType: "json",
+        //contentType: "application/json",
 
 
         success: function(courses){
-
 
             //var courses = JSON.parse(courses)
             courses.forEach(function(course){
@@ -31,7 +31,7 @@ $(document).ready(function(){
 
     $("#coursesTable").on("click", ".knap", function(){
         var course = $(this).data("course");
-        window.location.href= "/Klient/lectures.html#" + course
+        window.location.href= "/Klient/adminLectures.html#" + course
     })
 });
 

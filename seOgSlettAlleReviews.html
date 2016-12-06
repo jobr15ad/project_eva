@@ -13,7 +13,7 @@
 <div class="navbar navbar-default navbar-static-top" role="navigation">
     <ul class="nav navbar-nav">
         <li><a href="http://localhost:63343/Klient/hjemAdmin.html?_ijt=m5igd6mu2ve8piqtanb19pkdhm"><i class="glyphicon glyphicon-home"></i></a></li>
-        <li><a href="http://localhost:63343/Klient/adminLectures.html?_ijt=rb7v6uajdqlj5559sec2ba34nh"><button>Se lectures og kommentarer</button></a></li>
+        <li><a href="http://localhost:63343/Klient/adminKurs.html?_ijt=htgj7efo8mqsbqp1s554er50bg"><button>Se alle kursus</button></a></li>
     </ul>
 
 
@@ -23,20 +23,28 @@
     </div>
 
 </div>
-</div>
-</li>
-</ul>
-</li>
-</ul>
-</div><!--/.nav-collapse -->
 
-Tabell med alle reviews hvor man også kan slette alle..
+<!--Tabell som viser reviews-->
+<div class="page-header">
+    <h1>Oversikt over alle reviews</h1>
+</div>
+
+<table class="table">
+    <thead>
+    <th>Kommentar</th>
+    <th>Rating</th>
+    <th>Slett</th>
+    </thead>
+
+    <tbody id="ReviewsTable">
+    </tbody>
+</table>
 
 
 <script type="text/javascript" src="lib/js/jquery-3.1.1.js"></script>
 <script type="text/javascript" src="lib/js/bootstrap.js"></script>
+<script type="text/javascript" src="js/sdk.js"></script>
 <script type="text/javascript" src="js/seOgSlettAlleReviews.js"></script>
-
 
 </body>
 </html>

@@ -17,9 +17,7 @@ $(document).ready(function(){
         method: "GET",
         dataType: "json",
 
-
         success: function(lectures){
-
 
             lectures.forEach(function(lectureId){
 
@@ -28,10 +26,18 @@ $(document).ready(function(){
                     "<td>" + lectureId.description + "</td>" +
                     "<td>" + lectureId.type + "</td>" +
                     "<td>" + lectureId.startDate + "</td>" +
-                    "<td><a role='button' href='lagOgSeReview.html' class='btn btn-success btn-lg'> lag review</a></td>" +
+                    "<td><a role='button' data-id=" + lectureId.id + " class='btn btn-success btn-lg toLecture'> lag review</a></td>" +
                     "</tr>"
                 );
             });
         },
     });
+
+
+    $("#coursesTable").on("click",".toLecture",function(e){
+        e.preventDefault();
+        var id = $(this).data("id");
+        window.location.href = "lagOgSeReview.html#" + id
+    })
+
 });
